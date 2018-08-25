@@ -1,0 +1,73 @@
+// webpack v4
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+
+module.exports = {
+    entry: {
+        app: './src/index.tsx',
+        vendor: ['react', 'react-dom']
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].[hash].js'
+    },
+
+    devServer: {
+        contentBase: './build',
+        hot: true,
+        inline: true,
+    },
+
+    module: {
+        rules: [
+            {
+                test: [/\.ts?$/, /\.tsx?$/],
+                exclude: /node_modules/,
+                use: 'awesome-typescript-loader',
+            },
+            {
+                test: [/\.js$/, /\.jsx$/],
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.svg(\?.*)?$/,
+                use: 'url-loader?limit=10000&mimetype=image/svg+xml&name=fonts/[hash].[ext]'
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/i,
+                use: 'url-loader?limit=1000&name=images/[hash].[ext]'
+            }
+        ]
+    },
+
+    plugins: [
+        new CleanWebpackPlugin('build', {}),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css'
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            hash: true,
+            template: './src/index.html',
+            filename: 'index.html'
+        }),
+        new WebpackMd5Hash(),
+        new webpack.HotModuleReplacementPlugin()
+    ]
+};
