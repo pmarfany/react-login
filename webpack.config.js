@@ -9,7 +9,14 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         app: './src/index.tsx',
-        vendor: ['react', 'react-dom']
+        vendor: [
+            'react',
+            'react-dom',
+        ]
+    },
+
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss'],
     },
 
     output: {
@@ -51,8 +58,12 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
-                use: 'url-loader?limit=1000&name=images/[hash].[ext]'
-            }
+                use: 'file-loader?limit=1000&name=images/[hash].[ext]'
+            },
+            {
+                test: /\.(eot|otf|ttf|woff?2)(\?.*)?$/,
+                use: 'file-loader?name=fonts/[hash].[ext]'
+            },
         ]
     },
 

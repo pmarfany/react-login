@@ -1,0 +1,19 @@
+$footer-color: white;
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 200;
+
+
+  margin: 20px auto;
+
+  //font-weight: 200;
+  color: $footer-color;
+  text-align: center;
+}

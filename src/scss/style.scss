@@ -1,3 +1,30 @@
-div {
-  color: red;
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400');
+@import "variables.scss";
+
+* {
+  font-family: 'Avenir LT Std';
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  color: white;
 }
+
+#login {
+  min-height: 100vh;
+  width: 100vw;
+  background: $background no-repeat center bottom;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: fixed;
+    @include fullScreen;
+
+    background-color: $overlay;
+    z-index: 0;
+  }
+}
+
+main, footer { z-index: 1; }

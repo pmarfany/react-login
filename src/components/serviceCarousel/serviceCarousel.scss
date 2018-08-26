@@ -1,0 +1,29 @@
+.service_carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.service {
+  height: 40px;
+  width: 40px;
+
+  background-color: transparentize(white, 0.53);
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+
+  &:nth-child(2) { margin: 0 15px; }
+
+  &.selected {
+    height: 70px;
+    width: 130px;
+    background-color: white;
+  }
+
+  &_owncloud { mask-image: url('../../assets/owncloud.svg'); }
+  &_kodi { mask-image: url('../../assets/kodi.svg'); }
+  &_torrent { mask-image: url('../../assets/torrent.svg'); }
+}

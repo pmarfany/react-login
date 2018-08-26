@@ -1,12 +1,11 @@
 import * as React from "react";
 import ReactDOM = require("react-dom");
+import {App} from "./App";
+
+// Estils
 import './scss/style.scss';
+import './fonts/fonts.scss';
 
-class App extends React.Component {
-    render() {
-        return <div>Hello, world!</div>;
-    }
-}
+const rootElement = document.getElementById('login');
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<App/>, rootElement);

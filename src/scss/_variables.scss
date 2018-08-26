@@ -1,0 +1,25 @@
+// Variables
+$background: url("../assets/background.png");
+$overlay: transparentize(black, 0.55);
+//$text-color: white;
+
+/*Server logo
+$server-size: 45px;
+$server-image: url('../assets/logo.svg');
+
+// TODO: Service Logos (replace with sprite)
+$kodi-logo: url("../assets/service-logos/kodi.svg");
+$cloud-logo: url("../assets/service-logos/ownCloud.svg");
+$torrent-logo: url("../assets/service-logos/torrent.svg");*/
+
+// Breakpoints
+$medium-min: 768px;
+$medium-max: $medium-min - 1;
+
+// Mixins
+@mixin fullScreen {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
