@@ -10,7 +10,7 @@ main {
   position: absolute;
   top: calc(50% - #{$input-height / 2});
   left: 50%;
-  transform: translateY(-50%) translateY($input-height / 2) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
 
   // top: 50% - 33px (33*2 == height form)
 }
@@ -18,10 +18,17 @@ main {
 header {
   margin-bottom: 46px;
 
-  p {
+  h1 {
     text-align: center;
-    font-family: 'Avenir Book 34';
     font-size: 34px;
     line-height: 46px;
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 295px;
 }

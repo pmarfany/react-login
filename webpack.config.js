@@ -61,7 +61,7 @@ module.exports = {
                 use: 'file-loader?limit=1000&name=images/[hash].[ext]'
             },
             {
-                test: /\.(eot|otf|ttf|woff?2)(\?.*)?$/,
+                test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
                 use: 'file-loader?name=fonts/[hash].[ext]'
             },
         ]

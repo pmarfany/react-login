@@ -10,13 +10,19 @@ interface IPageProps {}
 
 interface IPageState {
   selectedService: IService;
+  username: string;
+  password: string;
 }
 
 export class Login extends React.Component<IPageProps, IPageState> {
 
   public constructor(props: IPageProps) {
     super(props);
-    this.state = { selectedService: Service.getDefaultService() };
+    this.state = {
+      selectedService: Service.getDefaultService(),
+      username: '',
+      password: '',
+    };
   };
 
   private handleSubmit = (e: any) => {
@@ -28,19 +34,39 @@ export class Login extends React.Component<IPageProps, IPageState> {
     this.setState({ selectedService });
   };
 
+  private onInputChange = (key: string) => (value: string) => {
+    const dict: any = {};
+    dict[key] = value;
+    this.setState(dict);
+  };
+
   public render() {
     return (
       <main>
         {/* Header */}
         <header>
           <ServiceCarousel selected={this.state.selectedService} onSelect={this.onServiceSelect} />
-          <p>{this.state.selectedService.name}</p>
+          <h1>{this.state.selectedService.name}</h1>
         </header>
 
         {/* Login form */}
         <form onSubmit={this.handleSubmit}>
-          <InputField type={'text'} label={'Usuario'} required />
-          <InputField type={'password'} label={'Contraseña'} required />
+          <InputField
+            type={'text'}
+            label={'Usuario'}
+            name={'username'}
+            required
+            value={this.state.username}
+            onChange={this.onInputChange('username')}
+          />
+          <InputField
+            type={'password'}
+            label={'Contraseña'}
+            name={'password'}
+            required
+            value={this.state.password}
+            onChange={this.onInputChange('password')}
+          />
           <SubmitField label={'Acceder'}/>
         </form>
       </main>

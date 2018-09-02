@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   margin-bottom: 18px;
 }
 
 .service {
   height: 40px;
   width: 40px;
+  cursor: pointer;
 
   background-color: transparentize(white, 0.53);
   mask-size: contain;
@@ -19,11 +19,17 @@
 
   &.selected {
     height: 70px;
-    width: 130px;
+    width: 70px;
     background-color: white;
+    cursor: initial;
+    pointer-events: none;
   }
 
-  &_owncloud { mask-image: url('../../assets/owncloud.svg'); }
+  &_owncloud {
+    mask-image: url('../../assets/owncloud.svg');
+
+    &.selected { width: 124px; }
+  }
   &_kodi { mask-image: url('../../assets/kodi.svg'); }
   &_torrent { mask-image: url('../../assets/torrent.svg'); }
 }

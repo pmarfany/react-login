@@ -2,13 +2,16 @@
 @import "variables.scss";
 
 * {
-  font-family: 'Avenir LT Std';
+  font-family: 'Avenir LT Std 45 Book';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   text-decoration: none;
   border: none;
   outline: none;
   box-sizing: border-box;
   color: white;
+  font-weight: normal;
 }
 
 #login {

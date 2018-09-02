@@ -1,4 +1,5 @@
 import * as React from "react";
+import './submitField.scss';
 
 interface ISubmitProps {
   label: string;
