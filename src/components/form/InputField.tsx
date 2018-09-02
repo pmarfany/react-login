@@ -24,12 +24,10 @@ export class InputField extends React.Component<InputProps, InputFieldState> {
   private static defaultProps = { required: false };
 
   // DOM References
-  private input: RefObject<HTMLInputElement> = undefined;
   private label: RefObject<HTMLLabelElement> = undefined;
 
   constructor(props: InputProps) {
     super(props);
-    this.input = React.createRef();
     this.label = React.createRef();
     this.state = {
       hasValue: this.inputHasValue(props.value),
@@ -73,7 +71,6 @@ export class InputField extends React.Component<InputProps, InputFieldState> {
                onChange={this.onInputChange}
                onFocus={this.onFocus}
                onBlur={this.onBlur}
-               ref={this.input}
         />
         <label className={labelClassName} ref={this.label}>
           {this.props.label}
