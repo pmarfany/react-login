@@ -1,18 +1,13 @@
-$input-height: 66px;
-
 main {
+  margin: $main-margin 0;
+  height: calc(100vh - #{$footer-height} - 2*#{$main-margin});
+  min-height: min-content;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-
-  $top: calc(50% - #{$input-height});
-  position: absolute;
-  top: calc(50% - #{$input-height / 2});
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-
-  // top: 50% - 33px (33*2 == height form)
+  justify-content: center;
 }
 
 header {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import './style.scss';
+import './footer.scss';
 
 interface IFooterProps {}
 

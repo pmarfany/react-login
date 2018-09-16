@@ -5,9 +5,19 @@ $overlay: transparentize(black, 0.55);
 
 /*Server logo
 $server-size: 45px;
-$server-image: url('../assets/logo.svg');
+$server-image: url('../assets/logo.svg');*/
 
-// TODO: Service Logos (replace with sprite)
+// Input fields
+$input-height: 66px;
+
+// Main
+$main-margin: 50px;
+
+// Footer
+$footer-color: white;
+$footer-height: 78px;
+
+/* TODO: Service Logos (replace with sprite)
 $kodi-logo: url("../assets/service-logos/kodi.svg");
 $cloud-logo: url("../assets/service-logos/ownCloud.svg");
 $torrent-logo: url("../assets/service-logos/torrent.svg");*/
