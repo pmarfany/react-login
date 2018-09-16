@@ -6,6 +6,12 @@ import {App} from "./App";
 import './scss/style.scss';
 import './fonts/fonts.scss';
 
+// Web Manifest
+import './manifest';
+
+// App Favicon
+import './assets/favicon.png';
+
 const rootElement = document.getElementById('login');
 
 ReactDOM.render(<App/>, rootElement);

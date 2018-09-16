@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
@@ -12,7 +13,7 @@ module.exports = {
         vendor: [
             'react',
             'react-dom',
-        ]
+        ],
     },
 
     resolve: {
@@ -64,12 +65,21 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
+                exclude: path.resolve(__dirname, './src/assets/favicon.png'),
                 use: 'file-loader?limit=1000&name=images/[hash].[ext]'
+            },
+            {
+                test: /favicon.png$/,
+                use: 'file-loader?name=[name].[ext]'
             },
             {
                 test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
                 use: 'file-loader?name=fonts/[hash].[ext]'
             },
+            {
+                test: /manifest.js$/,
+                use: ExtractTextPlugin.extract({ use: [] })
+            }
         ]
     },
 
@@ -78,11 +88,15 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css'
         }),
+        new ExtractTextPlugin('manifest.json'),
         new HtmlWebpackPlugin({
             inject: false,
             hash: true,
+            title: 'Kodi',
             template: './src/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            faviconUrl: 'favicon.png',
+            themeColor: '#1f747d',
         }),
         new WebpackMd5Hash(),
         new webpack.HotModuleReplacementPlugin()

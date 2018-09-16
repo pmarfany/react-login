@@ -26,10 +26,10 @@
   }
 
   &_owncloud {
-    mask-image: url('../../assets/owncloud.svg');
+    mask-image: url('../../assets/icons/owncloud.svg');
 
     &.selected { width: 124px; }
   }
-  &_kodi { mask-image: url('../../assets/kodi.svg'); }
-  &_torrent { mask-image: url('../../assets/torrent.svg'); }
+  &_kodi { mask-image: url('../../assets/icons/kodi.svg'); }
+  &_torrent { mask-image: url('../../assets/icons/torrent.svg'); }
 }
