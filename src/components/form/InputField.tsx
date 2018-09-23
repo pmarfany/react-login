@@ -17,8 +17,6 @@ interface InputFieldState {
   hasFocus: boolean;
 }
 
-// Autocomplete -- color and content
-
 export class InputField extends React.Component<InputProps, InputFieldState> {
   // Default props for the component
   private static defaultProps = { required: false };

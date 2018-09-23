@@ -1,15 +1,13 @@
 import * as React from "react";
 import {InputField} from './form/InputField';
 import {SubmitField} from "./form/SubmitField";
-import {IService, Service} from "../lib/services";
-import {ServiceCarousel} from "./serviceCarousel/ServiceCarousel";
+import {ServiceList} from "./serviceList/ServiceList";
 
-import './page.scss';
+import './login.scss';
 
 interface IPageProps {}
 
 interface IPageState {
-  selectedService: IService;
   username: string;
   password: string;
 }
@@ -18,20 +16,12 @@ export class Login extends React.Component<IPageProps, IPageState> {
 
   public constructor(props: IPageProps) {
     super(props);
-    this.state = {
-      selectedService: Service.getDefaultService(),
-      username: '',
-      password: '',
-    };
+    this.state = { username: '', password: '' };
   };
 
   private handleSubmit = (e: any) => {
-    console.log('form submit');
+    console.log('Form submit');
     e.preventDefault();
-  };
-
-  private onServiceSelect = (selectedService: IService) => {
-    this.setState({ selectedService });
   };
 
   private onInputChange = (key: string) => (value: string) => {
@@ -45,8 +35,8 @@ export class Login extends React.Component<IPageProps, IPageState> {
       <main>
         {/* Header */}
         <header>
-          <ServiceCarousel selected={this.state.selectedService} onSelect={this.onServiceSelect} />
-          <h1>{this.state.selectedService.name}</h1>
+          <ServiceList />
+          <h1>Kodi</h1>
         </header>
 
         {/* Login form */}

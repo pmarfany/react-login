@@ -1,4 +1,4 @@
-.service_carousel {
+.service_list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,7 +8,6 @@
 .service {
   height: 40px;
   width: 40px;
-  cursor: pointer;
 
   background-color: transparentize(white, 0.53);
   mask-size: contain;
@@ -25,11 +24,7 @@
     pointer-events: none;
   }
 
-  &_owncloud {
-    mask-image: url('../../assets/icons/owncloud.svg');
-
-    &.selected { width: 124px; }
-  }
+  &_owncloud { mask-image: url('../../assets/icons/owncloud.svg'); }
   &_kodi { mask-image: url('../../assets/icons/kodi.svg'); }
   &_torrent { mask-image: url('../../assets/icons/torrent.svg'); }
 }
