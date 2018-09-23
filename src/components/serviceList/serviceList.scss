@@ -24,7 +24,7 @@
     pointer-events: none;
   }
 
-  &_owncloud { mask-image: url('../../assets/icons/owncloud.svg'); }
-  &_kodi { mask-image: url('../../assets/icons/kodi.svg'); }
-  &_torrent { mask-image: url('../../assets/icons/torrent.svg'); }
+  &_kodi { mask-image: $kodi-logo; }
+  &_owncloud { mask-image: $owncloud-logo; }
+  &_torrent { mask-image: $torrent-logo; }
 }

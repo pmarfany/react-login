@@ -1,11 +1,6 @@
 // Variables
 $background: url("../assets/background.png");
 $overlay: transparentize(black, 0.55);
-//$text-color: white;
-
-/*Server logo
-$server-size: 45px;
-$server-image: url('../assets/logo.svg');*/
 
 // Input fields
 $input-height: 66px;
@@ -17,10 +12,10 @@ $main-margin: 50px;
 $footer-color: white;
 $footer-height: 78px;
 
-/* TODO: Service Logos (replace with sprite)
-$kodi-logo: url("../assets/service-logos/kodi.svg");
-$cloud-logo: url("../assets/service-logos/ownCloud.svg");
-$torrent-logo: url("../assets/service-logos/torrent.svg");*/
+// TODO: Service Logos (path relative to final file)
+$kodi-logo: url("../../assets/icons/kodi.svg");
+$owncloud-logo: url("../../assets/icons/owncloud.svg");
+$torrent-logo: url("../../assets/icons/torrent.svg");
 
 // Breakpoints
 $medium-min: 768px;
