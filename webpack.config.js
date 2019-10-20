@@ -60,7 +60,10 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
-                use: 'file-loader?limit=1000&name=images/[hash].[ext]'
+                loaders: [
+                  'file-loader?limit=1000&name=images/[hash].webp',
+                  'webp-loader'
+                ]
             },
             {
                 test: /\.(eot|otf|ttf|woff|woff2)(\?.*)?$/,
