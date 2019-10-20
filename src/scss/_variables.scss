@@ -2,6 +2,9 @@
 $background: url("../assets/background.jpg");
 $overlay: transparentize(black, 0.55);
 
+// Logos
+$login-logo: url("../../assets/user-icon.svg");
+
 // Mixins
 @mixin fullScreen {
   top: 0;

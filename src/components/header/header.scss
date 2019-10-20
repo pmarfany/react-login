@@ -1,0 +1,23 @@
+header {
+  margin-bottom: 46px;
+
+  h1 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 46px;
+  }
+}
+
+figure {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  background-color: white;
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+
+  &.login-logo { mask-image: $login-logo; }
+}

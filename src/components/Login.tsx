@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Header} from "./header/Header";
 import {InputField} from './form/InputField';
 import {SubmitField} from "./form/SubmitField";
 import './login.scss';
@@ -31,9 +32,7 @@ export class Login extends React.Component<IPageProps, IPageState> {
   public render() {
     return (
       <main>
-        <header>
-          <h1>Login</h1>
-        </header>
+        <Header />
 
         <form onSubmit={this.handleSubmit}>
           <InputField

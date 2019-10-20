@@ -59,6 +59,10 @@ module.exports = {
                 ]
             },
             {
+                test: /\.svg(\?.*)?$/,
+                use: 'url-loader?limit=10000&mimetype=image/svg+xml&name=fonts/[hash].[ext]'
+            },
+            {
                 test: /\.(jpe?g|png|gif)$/i,
                 loaders: [
                   'file-loader?limit=1000&name=images/[hash].webp',
