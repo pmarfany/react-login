@@ -4,56 +4,44 @@ import {InputField} from './form/InputField';
 import {SubmitField} from "./form/SubmitField";
 import './login.scss';
 
-interface IPageProps {}
-
 interface IPageState {
   username: string;
   password: string;
 }
 
-export class Login extends React.Component<IPageProps, IPageState> {
+const handleSubmit = (e: React.SyntheticEvent) => {
+  alert('Form submit');
+  e.preventDefault();
+};
 
-  public constructor(props: IPageProps) {
-    super(props);
-    this.state = { username: '', password: '' };
+export const Login: React.SFC = () => {
+  const [state, setState] = React.useState<IPageState>({ username: '', password: '' });
+  const onInputChange = (key: keyof IPageState) => (value: string) => {
+    setState((oldState: IPageState) => ({ ...oldState, [key]: value }));
   };
 
-  private handleSubmit = (e: any) => {
-    console.log('Form submit');
-    e.preventDefault();
-  };
-
-  private onInputChange = (key: string) => (value: string) => {
-    const dict: any = {};
-    dict[key] = value;
-    this.setState(dict);
-  };
-
-  public render() {
-    return (
-      <main>
-        <Header />
-
-        <form onSubmit={this.handleSubmit}>
-          <InputField
-            type="text"
-            label="Usuario"
-            name="username"
-            required
-            value={this.state.username}
-            onChange={this.onInputChange('username')}
-          />
-          <InputField
-            type="password"
-            label="Contraseña"
-            name="password"
-            required
-            value={this.state.password}
-            onChange={this.onInputChange('password')}
-          />
-          <SubmitField label="Acceder" />
-        </form>
-      </main>
-    );
-  }
+  return (
+    <main>
+      <Header />
+      <form onSubmit={handleSubmit}>
+        <InputField
+          type="text"
+          label="Usuario"
+          name="username"
+          required
+          value={state.username}
+          onChange={onInputChange('username')}
+        />
+        <InputField
+          type="password"
+          label="Contraseña"
+          name="password"
+          required
+          value={state.password}
+          onChange={onInputChange('password')}
+        />
+        <SubmitField label="Acceder" />
+      </form>
+    </main>
+  );
 };
