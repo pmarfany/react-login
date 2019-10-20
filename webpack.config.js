@@ -84,7 +84,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             hash: true,
-            title: 'Kodi',
+            title: 'Login',
             template: './src/index.html',
             filename: 'index.html',
             themeColor: '#1f747d',
