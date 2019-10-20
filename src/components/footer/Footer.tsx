@@ -1,15 +1,8 @@
 import * as React from "react";
 import './footer.scss';
 
-interface IFooterProps {}
-
-export const Footer: React.SFC<IFooterProps> = () => {
-  const year = new Date().getFullYear();
-
-  return (
-    <footer>
-      <p>&copy; Copyright {year} - Pau Marfany</p>
-      <p>All rights reserved</p>
-    </footer>
-  );
-};
+export const Footer: React.SFC = () => (
+  <footer>
+    <p>Pau Marfany - {new Date().getFullYear()}</p>
+  </footer>
+);
