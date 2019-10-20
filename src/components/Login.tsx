@@ -1,8 +1,6 @@
 import * as React from "react";
 import {InputField} from './form/InputField';
 import {SubmitField} from "./form/SubmitField";
-import {ServiceList} from "./serviceList/ServiceList";
-
 import './login.scss';
 
 interface IPageProps {}
@@ -33,31 +31,28 @@ export class Login extends React.Component<IPageProps, IPageState> {
   public render() {
     return (
       <main>
-        {/* Header */}
         <header>
-          <ServiceList />
-          <h1>Kodi</h1>
+          <h1>Login</h1>
         </header>
 
-        {/* Login form */}
         <form onSubmit={this.handleSubmit}>
           <InputField
-            type={'text'}
-            label={'Usuario'}
-            name={'username'}
+            type="text"
+            label="Usuario"
+            name="username"
             required
             value={this.state.username}
             onChange={this.onInputChange('username')}
           />
           <InputField
-            type={'password'}
-            label={'Contraseña'}
-            name={'password'}
+            type="password"
+            label="Contraseña"
+            name="password"
             required
             value={this.state.password}
             onChange={this.onInputChange('password')}
           />
-          <SubmitField label={'Acceder'}/>
+          <SubmitField label="Acceder" />
         </form>
       </main>
     );

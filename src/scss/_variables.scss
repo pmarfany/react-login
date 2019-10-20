@@ -2,25 +2,6 @@
 $background: url("../assets/background.jpg");
 $overlay: transparentize(black, 0.55);
 
-// Input fields
-$input-height: 66px;
-
-// Main
-$main-margin: 50px;
-
-// Footer
-$footer-color: white;
-$footer-height: 78px;
-
-// TODO: Service Logos (path relative to final file)
-$kodi-logo: url("../../assets/icons/kodi.svg");
-$owncloud-logo: url("../../assets/icons/owncloud.svg");
-$torrent-logo: url("../../assets/icons/torrent.svg");
-
-// Breakpoints
-$medium-min: 768px;
-$medium-max: $medium-min - 1;
-
 // Mixins
 @mixin fullScreen {
   top: 0;
